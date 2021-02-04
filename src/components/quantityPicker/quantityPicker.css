@@ -1,0 +1,9 @@
+.qntyPicker button {
+    margin: 5px 10px;
+
+}
+
+.qntyPicker label {
+    font-weight: bold;
+    color: #333;
+}
