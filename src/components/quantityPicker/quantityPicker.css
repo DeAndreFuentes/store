@@ -7,3 +7,18 @@
     font-weight: bold;
     color: #333;
 }
+
+.fa-cart-arrow-down{
+    color: green;
+    font-weight: bold;
+    font-size: large;
+    font-size: 30px;
+    
+}
+
+@media (hover: hover) {
+    i:hover {
+      background: yellow;
+      
+    }
+  }
