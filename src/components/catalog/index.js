@@ -1,24 +1,44 @@
 import React, { Component } from "react";
 
 import Product from "../product/index";
+import ProductService from "../../services/ProductService";
 
 class Catalog extends Component {
-  state = {};
+  state = {
+    products: [],
+  };
+
+  // constructor(){
+  //   super();
+  // console.log("constructor");
+  // }
+
   render() {
+    console.log("render");
     return (
-      <React.Fragment>
-        <Product price={10}></Product>
-        <Product price={20}></Product>
-        <Product price={30}></Product>
-        <Product price={40}></Product>
-        <Product price={50}></Product>
-        <Product price={60}></Product>
-        <Product price={70}></Product>
-        <Product price={80}></Product>
-        <Product price={90}></Product>
-        <Product price={100}></Product>
-      </React.Fragment>
+      <div className="catalog-page">
+        <div className="products">
+          {this.state.products.map((prod) => (
+            <Product key={prod.id} data={prod}></Product>
+          ))}
+        </div>
+      </div>
     );
+  }
+
+  // componentWillMount(){
+  //   console.log("will mount");
+
+  // }
+
+  componentDidMount() {
+    console.log("Did mount");
+
+    let service = new ProductService();
+    let data = service.getProducts();
+    console.log("got data", data);
+
+    this.setState({ products: data });
   }
 }
 

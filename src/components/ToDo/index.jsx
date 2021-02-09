@@ -124,7 +124,7 @@ class App extends React.Component {
               onClick={() => this.addItem()}
               disabled={!this.state.newItem.length}
             >
-              <i class="material-icons"> + </i>
+              <i className="material-icons"> + </i>
             </button>
             <br /> <br />
             <ul>
@@ -133,7 +133,7 @@ class App extends React.Component {
                   <li key={item.id}>
                     {item.value}
                     <button className="btn btn-floating" onClick={() => this.deleteItem(item.id)}>
-                      <i class="material-icons">x</i>
+                      <i className="material-icons">x</i>
                     </button>
                   </li>
                 );
@@ -148,4 +148,3 @@ class App extends React.Component {
   
 
 export default App;
-

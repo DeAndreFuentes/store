@@ -6,16 +6,17 @@ import "./product.css";
 
 class Product extends Component {
     state = { 
-        minimum: 1,
-        price: this.props.price,
-        total: this.props.price,
+        minimum: this.props.data.minimum || 1,
+        price: this.props.data.price,
+        total: this.props.data.price,
 
      };
     render() { 
         return (  
             <div className="product">
                 <h4>This will be a product</h4>
-                <img src="	https://picsum.photos/230/200" alt="Product Here"></img>
+                <img src={"/images/products/" + this.props.data.image} alt="Product Here"></img>
+                <h4>{this.props.data.title}</h4>
                 
                 <p>  Product description </p>
                 <h6> Total: ${this.state.total.toLocaleString("en-US")}</h6>
